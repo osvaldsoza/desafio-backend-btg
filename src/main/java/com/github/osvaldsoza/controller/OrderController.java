@@ -1,11 +1,12 @@
-package com.github.osvaldsoza.desafiobackendbtg.controller;
+package com.github.osvaldsoza.controller;
 
-import com.github.osvaldsoza.desafiobackendbtg.controller.dto.ApiResponse;
-import com.github.osvaldsoza.desafiobackendbtg.controller.dto.OrderResponse;
-import com.github.osvaldsoza.desafiobackendbtg.controller.dto.PaginationResponse;
-import com.github.osvaldsoza.desafiobackendbtg.controller.util.ApiAcceptedResponse;
-import com.github.osvaldsoza.desafiobackendbtg.listener.dto.OrderCreatedEventDTO;
-import com.github.osvaldsoza.desafiobackendbtg.service.OrderService;
+import com.github.osvaldsoza.config.RabbitMqConfig;
+import com.github.osvaldsoza.controller.dto.ApiResponse;
+import com.github.osvaldsoza.controller.dto.OrderResponse;
+import com.github.osvaldsoza.controller.dto.PaginationResponse;
+import com.github.osvaldsoza.controller.util.ApiAcceptedResponse;
+import com.github.osvaldsoza.listener.dto.OrderCreatedEventDTO;
+import com.github.osvaldsoza.service.OrderService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
@@ -14,8 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 import java.util.UUID;
-
-import static com.github.osvaldsoza.desafiobackendbtg.config.RabbitMqConfig.ORDER_CREATED_QUEUE;
 
 @RestController
 public class OrderController {
@@ -29,10 +28,9 @@ public class OrderController {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-
     @PostMapping("/orders")
     public ResponseEntity<?> createOrder(@RequestBody OrderCreatedEventDTO orderCreatedEventDTO){
-        rabbitTemplate.convertAndSend("", ORDER_CREATED_QUEUE, orderCreatedEventDTO);
+        rabbitTemplate.convertAndSend("", RabbitMqConfig.ORDER_CREATED_QUEUE, orderCreatedEventDTO);
 
         ApiAcceptedResponse response = ApiAcceptedResponse.of(
                 "Order received and will be processed soon.",
@@ -43,7 +41,6 @@ public class OrderController {
                 .status(HttpStatus.ACCEPTED)
                 .body(response);
     }
-
 
     @GetMapping("/customers/{customerId}/orders")
     public ResponseEntity<ApiResponse<OrderResponse>> listOrders(

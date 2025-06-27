@@ -1,11 +1,11 @@
-package com.github.osvaldsoza.desafiobackendbtg.service;
+package com.github.osvaldsoza.service;
 
-import com.github.osvaldsoza.desafiobackendbtg.controller.dto.OrderResponse;
-import com.github.osvaldsoza.desafiobackendbtg.entity.OrderEntity;
-import com.github.osvaldsoza.desafiobackendbtg.entity.OrderItem;
-import com.github.osvaldsoza.desafiobackendbtg.listener.dto.OrderCreatedEventDTO;
-import com.github.osvaldsoza.desafiobackendbtg.listener.dto.OrderItemEventDTO;
-import com.github.osvaldsoza.desafiobackendbtg.repository.OrderRepository;
+import com.github.osvaldsoza.controller.dto.OrderResponse;
+import com.github.osvaldsoza.entity.OrderEntity;
+import com.github.osvaldsoza.entity.OrderItem;
+import com.github.osvaldsoza.listener.dto.OrderCreatedEventDTO;
+import com.github.osvaldsoza.listener.dto.OrderItemEventDTO;
+import com.github.osvaldsoza.repository.OrderRepository;
 import org.bson.Document;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;

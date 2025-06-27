@@ -1,4 +1,4 @@
-package com.github.osvaldsoza.desafiobackendbtg.controller.util;
+package com.github.osvaldsoza.controller.util;
 
 public class ApiAcceptedResponse {
 

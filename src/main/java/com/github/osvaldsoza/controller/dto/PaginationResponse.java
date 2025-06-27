@@ -1,4 +1,4 @@
-package com.github.osvaldsoza.desafiobackendbtg.controller.dto;
+package com.github.osvaldsoza.controller.dto;
 
 import org.springframework.data.domain.Page;
 

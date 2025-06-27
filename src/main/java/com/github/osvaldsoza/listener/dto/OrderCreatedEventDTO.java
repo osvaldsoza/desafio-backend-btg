@@ -1,4 +1,4 @@
-package com.github.osvaldsoza.desafiobackendbtg.listener.dto;
+package com.github.osvaldsoza.listener.dto;
 
 import java.util.List;
 

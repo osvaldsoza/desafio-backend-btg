@@ -1,15 +1,14 @@
-package com.github.osvaldsoza.desafiobackendbtg.listener;
+package com.github.osvaldsoza.listener;
 
-import com.github.osvaldsoza.desafiobackendbtg.listener.dto.OrderCreatedEventDTO;
-import com.github.osvaldsoza.desafiobackendbtg.service.OrderService;
+import com.github.osvaldsoza.config.RabbitMqConfig;
+import com.github.osvaldsoza.listener.dto.OrderCreatedEventDTO;
+import com.github.osvaldsoza.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.messaging.Message;
 import org.springframework.stereotype.Component;
-
-import static com.github.osvaldsoza.desafiobackendbtg.config.RabbitMqConfig.ORDER_CREATED_QUEUE;
 
 @Component
 public class OrderCreatedListener {
@@ -22,7 +21,7 @@ public class OrderCreatedListener {
         this.orderService = orderService;
     }
 
-    @RabbitListener(queues = ORDER_CREATED_QUEUE)
+    @RabbitListener(queues = RabbitMqConfig.ORDER_CREATED_QUEUE)
     public void listen(Message<OrderCreatedEventDTO> message) {
         logger.info("Messafe consumed: {}", message);
 

@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.github.osvaldsoza</groupId>
-    <artifactId>desafio-backend-btg</artifactId>
+    <artifactId>api-order-rabbitmq-mongo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>desafio-backend-btg</name>
-    <description>desafio-backend-btg</description>
+    <name>api-order-rabbitmq-mongo</name>
+    <description>api-order-rabbitmq-mongo</description>
     <url/>
     <licenses>
         <license/>

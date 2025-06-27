@@ -1,10 +1,10 @@
-package com.github.osvaldsoza.desafiobackendbtg;
+package com.github.osvaldsoza;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DesafioBackendBtgApplicationTests {
+class StartupApiApplicationTests {
 
     @Test
     void contextLoads() {

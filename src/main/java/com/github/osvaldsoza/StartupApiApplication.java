@@ -1,13 +1,13 @@
-package com.github.osvaldsoza.desafiobackendbtg;
+package com.github.osvaldsoza;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DesafioBackendBtgApplication {
+public class StartupApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DesafioBackendBtgApplication.class, args);
+        SpringApplication.run(StartupApiApplication.class, args);
     }
 
 }

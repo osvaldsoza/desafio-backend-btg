@@ -1,4 +1,4 @@
-package com.github.osvaldsoza.desafiobackendbtg.config;
+package com.github.osvaldsoza.config;
 
 import org.springframework.amqp.core.Declarable;
 import org.springframework.amqp.core.Queue;

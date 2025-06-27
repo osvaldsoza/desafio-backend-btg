@@ -1,7 +1,7 @@
-package com.github.osvaldsoza.desafiobackendbtg.repository;
+package com.github.osvaldsoza.repository;
 
-import com.github.osvaldsoza.desafiobackendbtg.controller.dto.OrderResponse;
-import com.github.osvaldsoza.desafiobackendbtg.entity.OrderEntity;
+import com.github.osvaldsoza.controller.dto.OrderResponse;
+import com.github.osvaldsoza.entity.OrderEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.mongodb.repository.MongoRepository;

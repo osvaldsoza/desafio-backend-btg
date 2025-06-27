@@ -1,4 +1,4 @@
-package com.github.osvaldsoza.desafiobackendbtg.entity;
+package com.github.osvaldsoza.entity;
 
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.FieldType;
